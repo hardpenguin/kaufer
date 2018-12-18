@@ -17,12 +17,22 @@ Supported stores:
 - iTunes (App Store) via Google Search
 
 ## Usage
-	./kaufer.py "Fallout 3"
-	./kaufer.py "Minit"
+
+Start the GUI
+    
+    ./gui.py
+
+or in the CLI
+
+    ./kaufer.py "Fallout 3"
+    ./kaufer.py "Minit"
+
+## Usage
+![Screenshot of Käufer window](https://github.com/hardpenguin/kaufer/raw/master/screenshot.png)
 
 ## Todo
 
-- some nice GUI
 - support for Windows and macOS
-- platform filtering
-- feature filtering
+- external config file so the app will remember unticked boxes
+- also move store links to an external text/JSON file so the user can add new stores
+- platform and feature filtering (?)
