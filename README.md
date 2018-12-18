@@ -27,7 +27,7 @@ or in the CLI
     ./kaufer.py "Fallout 3"
     ./kaufer.py "Minit"
 
-## Usage
+## Screenshot
 ![Screenshot of Käufer window](https://github.com/hardpenguin/kaufer/raw/master/screenshot.png)
 
 ## Todo
