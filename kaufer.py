@@ -7,5 +7,5 @@ class Kaufer(object):
         for store, link in search_links.items():
             print("%s" % store, end=" ")
             l = link.replace("{{ query }}", query)
-            os.system("xdg-open '%s' " % l)
+            os.system("xdg-open \"%s\" " % l)
         print("")
