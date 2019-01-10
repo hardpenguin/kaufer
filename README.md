@@ -16,6 +16,15 @@ Supported stores:
 - Kartridge
 - iTunes (App Store) via Google Search
 
+## Dependencies
+
+- Python 3
+- PyQt5
+
+They can be installed on Debian/Ubuntu by running:
+
+    sudo apt-get install python3 python3-pyqt5
+
 ## Usage
 
 Start the GUI
