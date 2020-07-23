@@ -3,7 +3,6 @@
 import argparse
 
 from kaufer import Kaufer
-import stores
 
 parser = argparse.ArgumentParser()
 parser.add_argument("game", help="The game you're looking for")
@@ -16,6 +15,9 @@ if args.game == None:
 else:
     query = args.game
 
+app = Kaufer()
+
 print("Käufer CLI started")
-Kaufer.Search(query, stores.search_links)
+app.search(query)
+
 print("Exiting")

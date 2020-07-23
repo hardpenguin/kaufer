@@ -6,15 +6,22 @@ The idea of creating it came to me as I realized that less popular stores do not
 
 Käufer is written in Python 3 and currently Linux-only compatible.
 
-Supported stores:
+Some of the supported stores include:
+
 - itch.io
 - GOG.com
 - Humble Store
 - Steam
 - Google Play
-- Discord
 - Kartridge
 - iTunes (App Store) via Google Search
+- Epic Games Store
+- Origin (EA)
+- Ubisoft Store (UPlay)
+- Nintendo Switch
+- PlayStation Store
+- Microsoft Store (Xbox One and Windows 10)
+- Bethesda.net
 
 ## Dependencies
 
@@ -42,6 +49,4 @@ or in the CLI
 ## Todo
 
 - support for Windows and macOS
-- external config file so the app will remember unticked boxes
-- also move store links to an external text/JSON file so the user can add new stores
 - platform and feature filtering (?)

@@ -6,7 +6,6 @@ import signal
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-import stores
 from kaufer import Kaufer
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
@@ -26,13 +25,15 @@ class KauferGUI(QWidget):
       self.query_input = QLineEdit()
       self.query_input.setMaximumWidth(150)
       self.query_input.setPlaceholderText("Game title")
-      self.query_input.returnPressed.connect(self.SearchAction)
+      self.query_input.returnPressed.connect(self.search_action)
       layout.addWidget(self.query_input)
 
       self.store_checkboxes = []
-      for store, link in stores.search_links.items():
-         checkbox = QCheckBox(store)
-         checkbox.setCheckState(2)
+      self.app = Kaufer()
+      for store in self.app.stores:
+         checkbox = QCheckBox(store["name"])
+         if store["enabled"]:
+            checkbox.setCheckState(2)
          self.store_checkboxes.append(checkbox)
          layout.addWidget(checkbox)
 
@@ -41,11 +42,15 @@ class KauferGUI(QWidget):
       buttons = []
       search_button = QPushButton("Search")
       buttons.append(search_button)
-      search_button.clicked.connect(self.SearchAction)
+      search_button.clicked.connect(self.search_action)
+
+      save_button = QPushButton("Save")
+      buttons.append(save_button)
+      save_button.clicked.connect(self.save_action)
 
       quit_button = QPushButton("Quit")
       buttons.append(quit_button)
-      quit_button.clicked.connect(self.QuitAction)
+      quit_button.clicked.connect(self.quit_action)
 
       for button in buttons:
          button.setFixedSize(button_size)
@@ -53,16 +58,26 @@ class KauferGUI(QWidget):
 
       self.setLayout(layout)
 
-   def SearchAction(self):
-      action_links = stores.search_links.copy()
+   def update_enabled_status(self):
       i = 0
-      for store, link in stores.search_links.items():
+      for checkbox in self.store_checkboxes:
          if self.store_checkboxes[i].isChecked() == False:
-            action_links.pop(store)
+            self.app.stores[i]["enabled"] = False
+         else:
+            self.app.stores[i]["enabled"] = True
          i = i + 1
-      Kaufer.Search(self.query_input.text(), action_links)
 
-   def QuitAction(self):
+   def search_action(self):
+      self.update_enabled_status()
+      print("Searching \"%s\"" % self.query_input.text())
+      self.app.search(self.query_input.text())
+
+   def save_action(self):
+      self.update_enabled_status()
+      self.app.save_config()
+      print("Config saved")
+
+   def quit_action(self):
       print("Exiting")
       sys.exit()
 

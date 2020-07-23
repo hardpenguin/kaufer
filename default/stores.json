@@ -1,0 +1,85 @@
+[
+    {
+        "name": "itch.io",
+        "link": "https://itch.io/search?q={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "GOG.com",
+        "link": "https://www.gog.com/games?search={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Humble Store",
+        "link": "https://www.humblebundle.com/store/search?search={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Steam",
+        "link": "https://store.steampowered.com/search/?term={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Google Play",
+        "link": "https://play.google.com/store/search?q={{ query }}&c=apps",
+        "enabled": true
+    },
+
+    {
+        "name": "Kartridge",
+        "link": "https://www.kartridge.com/search/{{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "iTunes",
+        "link": "https://www.google.com/search?q=site%3Aitunes.apple.com+{{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Epic Games Store",
+        "link": "https://www.epicgames.com/store/browse?q={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Origin",
+        "link": "https://www.origin.com/search?searchString={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Ubisoft Store",
+        "link": "https://store.ubi.com/search?q={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Nintendo Switch",
+        "link": "https://www.nintendo.com/search/#category=game&query={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "PlayStation Store",
+        "link": "https://store.playstation.com/en-us/grid/search-game/1?query={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Microsoft Store",
+        "link": "https://www.microsoft.com/en-us/search/shop/games?q={{ query }}",
+        "enabled": true
+    },
+
+    {
+        "name": "Bethesda.net",
+        "link": "https://bethesda.net/search?q={{ query }}&scope=games",
+        "enabled": true
+    }
+]
